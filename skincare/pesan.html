@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pesanan Skincare Ayu</title>
+    <link rel="stylesheet" href="form-style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Formulir Pesanan</h2>
+      <form action="process.php" method="post">
+        <label for="nama">Nama:</label><br />
+        <input type="text" id="nama" name="nama" required /><br /><br />
+
+        <label for="no_telp">Nomor Telepon:</label><br />
+        <input type="text" id="no_telp" name="no_telp" required /><br /><br />
+
+        <label for="alamat">Alamat:</label><br />
+        <textarea id="alamat" name="alamat" rows="4" required></textarea
+        ><br /><br />
+
+        <label for="metode_pembayaran">Metode Pembayaran:</label><br />
+        <select id="metode_pembayaran" name="metode_pembayaran" required>
+          <option value="transfer">Transfer Bank</option>
+          <option value="cod">Cash on Delivery (COD)</option></select
+        ><br /><br />
+
+        <label for="paket">Paket yang Dipilih:</label><br />
+        <input
+          type="text"
+          id="paket_display"
+          name="paket_display"
+          disabled
+        /><br /><br />
+
+        <label for="harga">Harga:</label><br />
+        <input
+          type="text"
+          id="harga_display"
+          name="harga_display"
+          disabled
+        /><br /><br />
+
+        <input type="hidden" id="paket" name="paket" />
+        <input type="hidden" id="harga" name="harga" />
+
+        <input type="submit" value="Tambah Pesanan" class="submit-button" />
+      </form>
+      <br />
+      <button onclick="goBack()" class="back-button">Kembali</button>
+    </div>
+
+    <script>
+      function getQueryParams() {
+        const params = {};
+        window.location.search
+          .substring(1)
+          .split("&")
+          .forEach(function (pair) {
+            const [key, value] = pair.split("=");
+            params[decodeURIComponent(key)] = decodeURIComponent(value);
+          });
+        return params;
+      }
+
+      function setFormValues() {
+        const params = getQueryParams();
+        document.getElementById("paket").value = params["paket"];
+        document.getElementById("harga").value = params["harga"];
+        document.getElementById("paket_display").value = params["paket"];
+        document.getElementById("harga_display").value = params["harga"];
+      }
+
+      function goBack() {
+        window.location.href = "index.html#products";
+      }
+
+      window.onload = setFormValues;
+    </script>
+  </body>
+</html>

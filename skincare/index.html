@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skincare Ayu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#home">Skincare Ayu</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="home" class="container">
+        <h1>Selamat Datang di Skincare Ayu</h1>
+        <p>Temukan paket skincare terbaik untuk kebutuhan kulit Anda.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="products" class="container">
+        <h1 align="center">Paket Skincare Ayu</h1>
+        <div class="slider">
+          <div class="slides">
+            <div class="slide" id="slide-1">
+              <img
+                src="img/paket2.jpg"
+                alt="Paket A"
+                class="package-image"
+                onclick="openModal('img/paket2.jpg', 'Paket A')"
+              />
+              <h2>Paket A</h2>
+              <p>
+                Moisturizer 100ml<br />Toner 150ml<br />Serum 100ml<br /><br /><b
+                  >Rp250.000</b
+                >
+              </p>
+              <a href="pesan.html?paket=Paket A&harga=250000" class="button"
+                >Pesan</a
+              >
+            </div>
+            <div class="slide" id="slide-2">
+              <img
+                src="img/paket1.jpg"
+                alt="Paket B"
+                class="package-image"
+                onclick="openModal('img/paket1.jpg', 'Paket B')"
+              />
+              <h2>Paket B</h2>
+              <p>
+                Cleanser 250ml<br />Moisturizer 100ml<br />Sunscreen 50ml<br />Serum
+                100ml<br /><br /><b>Rp350.000</b>
+              </p>
+              <a href="pesan.html?paket=Paket B&harga=350000" class="button"
+                >Pesan</a
+              >
+            </div>
+            <div class="slide" id="slide-3">
+              <img
+                src="img/paket3.png"
+                alt="Paket C"
+                class="package-image"
+                onclick="openModal('img/paket3.png', 'Paket C')"
+              />
+              <h2>Paket C</h2>
+              <p>
+                Moisturizer 100ml<br />Sunscreen 50ml<br /><br /><b
+                  >Rp100.000</b
+                >
+              </p>
+              <a href="pesan.html?paket=Paket C&harga=100000" class="button"
+                >Pesan</a
+              >
+            </div>
+          </div>
+          <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="contact" class="container">
+        <h2>Hubungi Kami</h2>
+        <p>
+          Silakan hubungi kami untuk informasi lebih lanjut tentang produk kami.
+        </p>
+        <p>Email: ayu@gmail.com</p>
+        <p>Phone: 0888-1111-2222</p>
+      </section>
+
+      <footer>
+        <p>&copy; 2024 Ramaditho Nugroho. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
